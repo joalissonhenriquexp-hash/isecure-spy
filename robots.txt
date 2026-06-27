@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isecure-spy.vercel.app/sitemap.xml

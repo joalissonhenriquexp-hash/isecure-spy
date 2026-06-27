@@ -3,12 +3,88 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>iSecure · Seu celular está sendo monitorado? Descubra agora.</title>
-<meta name="description" content="Diagnóstico forense que revela spyware, rastreadores e invasões no seu celular. Sigilo absoluto. Laudo em PDF. Mais de 18 mil aparelhos analisados no Brasil." />
+<title>iSecure · Diagnóstico forense de celular — spyware, rastreadores e segurança de dados</title>
+<meta name="description" content="Análise forense de iPhone e Android que verifica spyware conhecido (IOCs), rastreadores, apps ocultos e assinaturas suspeitas. Laudo em PDF, 100% remoto e sigiloso (LGPD). Para pessoas e empresas." />
+<meta name="keywords" content="diagnóstico forense celular, detectar spyware iphone, verificar celular monitorado, segurança de dados empresa, análise forense android, stalkerware, LGPD, proteção de dados, MVT" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="iSecure Diagnostics" />
+<meta name="theme-color" content="#070b16" />
+<link rel="canonical" href="https://isecure-spy.vercel.app/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="iSecure" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="iSecure · Diagnóstico forense de celular — segurança real para pessoas e empresas" />
+<meta property="og:description" content="Verificamos spyware, rastreadores e apps ocultos no seu aparelho. Laudo em PDF, 100% remoto e sigiloso. Atendemos pessoas e empresas com dados sensíveis." />
+<meta property="og:url" content="https://isecure-spy.vercel.app/" />
+<meta property="og:image" content="https://isecure-spy.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="iSecure · Diagnóstico forense de celular" />
+<meta name="twitter:description" content="Spyware, rastreadores e apps ocultos: nós encontramos e entregamos o laudo. Para pessoas e empresas. Sigilo absoluto." />
+<meta name="twitter:image" content="https://isecure-spy.vercel.app/og.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Dados estruturados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://isecure-spy.vercel.app/#org",
+      "name": "iSecure Diagnostics",
+      "url": "https://isecure-spy.vercel.app/",
+      "logo": "https://isecure-spy.vercel.app/favicon.svg",
+      "description": "Diagnóstico forense de dispositivos: detecção de spyware, rastreadores e auditoria de segurança e performance.",
+      "areaServed": "BR",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+5569999438321",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Diagnóstico forense de celular",
+      "serviceType": "Análise de segurança de dispositivos móveis",
+      "provider": { "@id": "https://isecure-spy.vercel.app/#org" },
+      "areaServed": "BR",
+      "audience": [
+        { "@type": "Audience", "audienceType": "Pessoas físicas" },
+        { "@type": "BusinessAudience", "name": "Empresas com dados sensíveis" }
+      ],
+      "description": "Verificação de spyware conhecido (IOCs), rastreadores, apps ocultos, permissões abusivas e assinaturas suspeitas, com laudo em PDF."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "A pessoa que me monitora vai descobrir que eu verifiquei?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Não. O processo é feito de forma discreta a partir de um backup do seu aparelho. Não enviamos nada e não alertamos ninguém." } },
+        { "@type": "Question", "name": "Funciona em iPhone e Android?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos iPhone (iOS) e Android, com diagnóstico adequado a cada sistema." } },
+        { "@type": "Question", "name": "Vocês atendem empresas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos postos, farmácias, hospitais, escolas, contabilidades e escritórios que precisam proteger dados de clientes e cumprir a LGPD. Veja a página Para Empresas." } },
+        { "@type": "Question", "name": "Como funciona a detecção de spyware?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usamos metodologia forense baseada em indicadores de comprometimento (IOCs) conhecidos, a mesma abordagem de ferramentas como o MVT. A ausência de detecção reduz fortemente, mas não elimina em absoluto, ameaças desconhecidas (zero-day)." } },
+        { "@type": "Question", "name": "É legal fazer isso?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. A análise é feita no seu próprio aparelho, com seu consentimento, em conformidade com a LGPD." } }
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -19,7 +95,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.5}
 a{text-decoration:none;color:inherit}
 
-/* ===== RADAR DE FUNDO (CSS puro, sem vídeo externo) ===== */
+/* ===== RADAR DE FUNDO (CSS puro) ===== */
 .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;background:
   radial-gradient(circle at 75% 15%,rgba(0,102,255,.14),transparent 45%),
   radial-gradient(circle at 15% 85%,rgba(0,212,255,.10),transparent 45%),var(--bg)}
@@ -43,8 +119,10 @@ a{text-decoration:none;color:inherit}
 .logo{font-size:26px;font-weight:900;letter-spacing:-.5px;line-height:1}
 .logo span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .logo small{display:block;font-size:10px;font-weight:500;color:#4a6a9f;letter-spacing:3px;text-transform:uppercase;margin-top:3px}
-.live-pill{display:flex;align-items:center;gap:8px;background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.2);
-  padding:7px 16px;border-radius:40px;font-size:12.5px;font-weight:600;color:var(--ok)}
+.nav{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.nav .pill{display:flex;align-items:center;gap:8px;background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.2);
+  padding:7px 14px;border-radius:40px;font-size:12.5px;font-weight:600;color:var(--ok)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(0,255,157,.6);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,255,157,.5)}70%{box-shadow:0 0 0 9px rgba(0,255,157,0)}100%{box-shadow:0 0 0 0 rgba(0,255,157,0)}}
 
@@ -56,7 +134,7 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:52px;font-weight:900;line-height:1.05;letter-spacing:-1.2px;margin-bottom:18px}
 .hero h1 .hl{background:linear-gradient(135deg,#fff 10%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero h1 .red{color:var(--red)}
-.hero .sub{font-size:19px;color:var(--muted);max-width:620px;margin:0 auto 30px}
+.hero .sub{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto 30px}
 .hero .sub b{color:var(--ink)}
 
 /* sintomas */
@@ -65,14 +143,13 @@ a{text-decoration:none;color:inherit}
   font-size:13.5px;font-weight:500;padding:9px 16px;border-radius:12px;display:flex;align-items:center;gap:9px}
 .symp span i{color:var(--red);font-size:12px}
 
-/* ===== STATS AO VIVO ===== */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 40px}
-.stat{background:linear-gradient(180deg,rgba(0,102,255,.07),rgba(255,255,255,.02));
+/* ===== TRUST FACTS (honesto, sem números inventados) ===== */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 40px}
+.fact{background:linear-gradient(180deg,rgba(0,102,255,.07),rgba(255,255,255,.02));
   border:1px solid rgba(0,212,255,.12);border-radius:18px;padding:22px 14px;text-align:center}
-.stat .n{font-size:34px;font-weight:900;letter-spacing:-1px;
-  background:linear-gradient(135deg,var(--cyan),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat .l{font-size:12px;color:var(--dim);margin-top:5px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
-.stat.live .n{color:var(--ok);background:none;-webkit-text-fill-color:var(--ok)}
+.fact i{font-size:24px;color:var(--cyan);margin-bottom:10px}
+.fact .t{font-size:15px;font-weight:800;letter-spacing:-.3px}
+.fact .l{font-size:12px;color:var(--dim);margin-top:5px;font-weight:600}
 
 /* ===== CTA principal ===== */
 .cta-main{text-align:center;margin:6px 0 50px}
@@ -81,32 +158,24 @@ a{text-decoration:none;color:inherit}
   transition:.25s;border:none;cursor:pointer}
 .btn-wa:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 50px rgba(37,211,102,.5)}
 .btn-wa i{font-size:24px}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--cyan);
+  padding:18px 32px;border-radius:60px;font-size:16px;font-weight:700;border:1px solid rgba(0,212,255,.3);transition:.25s}
+.btn-ghost:hover{background:rgba(0,212,255,.08);transform:translateY(-2px)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
 .cta-sub{color:var(--dim);margin-top:14px;font-size:13.5px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
 .cta-sub span i{color:var(--ok);margin-right:6px}
-
-/* ===== FEED AO VIVO ===== */
-.feed{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:22px;
-  padding:22px;margin:0 0 50px;overflow:hidden}
-.feed h3{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;
-  margin-bottom:16px;display:flex;align-items:center;gap:9px}
-.feed h3 .dot{width:7px;height:7px}
-.feed-list{height:152px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
-#feedTrack{display:flex;flex-direction:column;gap:10px}
-.feed-item{display:flex;align-items:center;gap:13px;padding:9px 12px;background:rgba(0,0,0,.25);border-radius:12px;
-  border-left:2px solid var(--blue)}
-.feed-item .av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:13px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan))}
-.feed-item .tx{flex:1;font-size:13.5px;color:var(--muted)}
-.feed-item .tx b{color:var(--ink)}
-.feed-item .res{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
-.res.clean{background:rgba(0,255,157,.1);color:var(--ok)}
-.res.threat{background:rgba(255,77,109,.1);color:var(--red)}
-.feed-item .city{font-size:11px;color:var(--dim);display:block;margin-top:1px}
 
 /* ===== SECTION TITLE ===== */
 .sec-title{text-align:center;font-size:30px;font-weight:800;letter-spacing:-.6px;margin:10px 0 8px}
 .sec-title span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.sec-desc{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 32px;font-size:15.5px}
+.sec-desc{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 32px;font-size:15.5px}
+
+/* ===== O QUE DETECTAMOS / CAPACIDADES ===== */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:56px}
+.cap{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px 20px}
+.cap i{font-size:24px;color:var(--cyan);margin-bottom:12px}
+.cap h4{font-size:16px;font-weight:700;margin-bottom:5px}
+.cap p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
 /* ===== COMO FUNCIONA ===== */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px}
@@ -125,17 +194,18 @@ a{text-decoration:none;color:inherit}
 .tcard h4{font-size:16px;font-weight:700;margin-bottom:5px}
 .tcard p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
-/* ===== DEPOIMENTOS ===== */
-.testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:56px}
-.tq{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px}
-.tq .stars{color:var(--warn);font-size:13px;margin-bottom:12px;letter-spacing:2px}
-.tq p{font-size:14.5px;color:var(--ink);line-height:1.6;margin-bottom:16px;font-style:italic}
-.tq .who{display:flex;align-items:center;gap:12px}
-.tq .who .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));
-  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
-.tq .who .meta{font-size:12.5px}
-.tq .who .meta b{display:block;font-size:13.5px}
-.tq .who .meta span{color:var(--dim)}
+/* ===== EMPRESAS (B2B) ===== */
+.b2b{background:linear-gradient(135deg,rgba(0,102,255,.10),rgba(0,212,255,.05));
+  border:1px solid rgba(0,212,255,.2);border-radius:26px;padding:40px 30px;margin-bottom:56px}
+.b2b-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.b2b-head h2{font-size:28px;font-weight:900;letter-spacing:-.6px}
+.b2b-head h2 span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.b2b-head p{color:var(--muted);font-size:15px;max-width:520px;margin-top:6px}
+.verticais{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px}
+.vert{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px;text-align:center}
+.vert i{font-size:22px;color:var(--cyan);margin-bottom:8px}
+.vert b{display:block;font-size:14px}
+.vert span{font-size:11.5px;color:var(--dim)}
 
 /* ===== SERVIÇOS ===== */
 .servicos{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:26px;padding:38px 28px;margin-bottom:56px}
@@ -167,7 +237,7 @@ a{text-decoration:none;color:inherit}
 
 .footer{text-align:center;font-size:12.5px;color:var(--dim);border-top:1px solid #15203a;padding-top:26px}
 .footer a{color:var(--blue)}
-.footer .disc{font-size:11px;color:#3a4860;max-width:620px;margin:14px auto 0;line-height:1.5}
+.footer .disc{font-size:11px;color:#3a4860;max-width:660px;margin:14px auto 0;line-height:1.5}
 
 /* ===== BOTÃO FLUTUANTE ===== */
 .float-wa{position:fixed;bottom:22px;right:22px;z-index:50;background:linear-gradient(135deg,#25D366,#1ebd5a);
@@ -177,7 +247,7 @@ a{text-decoration:none;color:inherit}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 @media (max-width:860px){
-  .stats{grid-template-columns:repeat(2,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:repeat(2,1fr);gap:22px 16px}
 }
 @media (max-width:560px){
@@ -186,7 +256,7 @@ a{text-decoration:none;color:inherit}
   .sec-title{font-size:25px}
   .btn-wa{padding:17px 34px;font-size:18px}
   .float-wa{padding:13px 18px;font-size:14px}
-  .stat .n{font-size:27px}
+  .nav{display:none}
 }
 </style>
 </head>
@@ -202,7 +272,11 @@ a{text-decoration:none;color:inherit}
   <!-- HEADER -->
   <header class="header">
     <div class="logo"><span>iSecure</span><small>Forensic Intelligence</small></div>
-    <div class="live-pill"><span class="dot"></span><b id="online">214</b>&nbsp;pessoas verificando agora</div>
+    <nav class="nav">
+      <a href="/empresas.html">Para empresas</a>
+      <a href="#como">Como funciona</a>
+      <span class="pill"><span class="dot"></span> Atendimento online</span>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -213,8 +287,9 @@ a{text-decoration:none;color:inherit}
       <span class="red">lendo tudo</span> <span class="hl">no seu celular.</span>
     </h1>
     <p class="sub">
-      Spyware, rastreadores e apps espiões deixam <b>rastros invisíveis</b>.
-      Nós encontramos — e te entregamos a prova em um laudo. <b>Sigilo absoluto.</b>
+      Spyware, rastreadores e apps espiões deixam <b>rastros</b>. Nós verificamos o seu
+      aparelho com <b>metodologia forense</b> e te entregamos um <b>laudo</b>. Sigilo absoluto —
+      para <b>pessoas e empresas</b>.
     </p>
 
     <div class="symp">
@@ -225,69 +300,89 @@ a{text-decoration:none;color:inherit}
       <span><i class="fas fa-circle"></i> Internet sumindo sem explicação</span>
     </div>
 
-    <!-- STATS -->
-    <div class="stats">
-      <div class="stat"><div class="n" data-count="18742">0</div><div class="l">Aparelhos analisados</div></div>
-      <div class="stat"><div class="n" data-count="6318">0</div><div class="l">Ameaças encontradas</div></div>
-      <div class="stat"><div class="n" data-count="12424">0</div><div class="l">Celulares limpos</div></div>
-      <div class="stat live"><div class="n" id="today">0</div><div class="l">Análises hoje</div></div>
+    <!-- TRUST FACTS (honesto) -->
+    <div class="facts">
+      <div class="fact"><i class="fas fa-shield-virus"></i><div class="t">Metodologia forense</div><div class="l">Baseada em IOCs conhecidos</div></div>
+      <div class="fact"><i class="fas fa-file-shield"></i><div class="t">Laudo em PDF</div><div class="l">Evidências e recomendações</div></div>
+      <div class="fact"><i class="fas fa-house-laptop"></i><div class="t">100% remoto</div><div class="l">Você fica com o aparelho</div></div>
+      <div class="fact"><i class="fas fa-user-secret"></i><div class="t">Sigilo · LGPD</div><div class="l">Dados excluídos após o laudo</div></div>
     </div>
 
     <!-- CTA -->
     <div class="cta-main">
-      <a class="btn-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
-        <i class="fab fa-whatsapp"></i> Verificar meu celular agora
-      </a>
+      <div class="cta-row">
+        <a class="btn-wa" href="#" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Verificar meu celular
+        </a>
+        <a class="btn-ghost" href="/empresas.html"><i class="fas fa-building-shield"></i> Sou empresa</a>
+      </div>
       <div class="cta-sub">
         <span><i class="fas fa-lock"></i> 100% sigiloso</span>
         <span><i class="fas fa-bolt"></i> Resposta em minutos</span>
-        <span><i class="fas fa-user-secret"></i> Indetectável</span>
+        <span><i class="fas fa-user-secret"></i> Discreto</span>
       </div>
     </div>
   </section>
 
-  <!-- FEED AO VIVO -->
-  <div class="feed">
-    <h3><span class="dot"></span> Verificações acontecendo agora · Brasil</h3>
-    <div class="feed-list"><div id="feedTrack"></div></div>
+  <!-- O QUE DETECTAMOS -->
+  <h2 class="sec-title">O que a <span>análise verifica</span></h2>
+  <p class="sec-desc">Uma varredura técnica do backup do seu aparelho — sem achismo.</p>
+  <div class="caps">
+    <div class="cap"><i class="fas fa-bug"></i><h4>Spyware conhecido</h4><p>Verificação de indicadores de comprometimento (IOCs) de famílias de spyware documentadas, como Pegasus e similares.</p></div>
+    <div class="cap"><i class="fas fa-satellite-dish"></i><h4>Rastreadores e stalkerware</h4><p>Apps de monitoramento e rastreamento que rodam de forma oculta no aparelho.</p></div>
+    <div class="cap"><i class="fas fa-eye-slash"></i><h4>Apps ocultos e permissões</h4><p>Aplicativos sem ícone e permissões abusivas (microfone, localização, acessibilidade).</p></div>
+    <div class="cap"><i class="fas fa-receipt"></i><h4>Assinaturas e cobranças</h4><p>Assinaturas recorrentes e cobranças que você talvez não reconheça.</p></div>
+    <div class="cap"><i class="fas fa-database"></i><h4>Armazenamento e performance</h4><p>O que consome espaço e deixa o aparelho lento — diagnóstico de performance.</p></div>
+    <div class="cap"><i class="fas fa-sliders"></i><h4>Configurações inseguras</h4><p>Ajustes que aumentam o risco de invasão e o que corrigir.</p></div>
   </div>
 
   <!-- COMO FUNCIONA -->
-  <h2 class="sec-title">Simples, rápido e <span>sem entregar seu aparelho</span></h2>
+  <h2 class="sec-title" id="como">Simples, rápido e <span>sem entregar seu aparelho</span></h2>
   <p class="sec-desc">Você não precisa deixar o celular com ninguém. Todo o processo é remoto e seguro.</p>
   <div class="steps">
     <div class="step"><span class="num">1</span><i class="fas fa-comment-dots"></i><h4>Você fala com a gente</h4><p>Manda um "oi" no WhatsApp. Te explicamos tudo, sem compromisso.</p></div>
     <div class="step"><span class="num">2</span><i class="fas fa-cloud-arrow-up"></i><h4>Gera o backup</h4><p>Você gera um backup do aparelho seguindo um passo a passo simples.</p></div>
-    <div class="step"><span class="num">3</span><i class="fas fa-magnifying-glass-chart"></i><h4>Análise forense</h4><p>Nossa engine vasculha spyware, rastreadores e apps ocultos.</p></div>
-    <div class="step"><span class="num">4</span><i class="fas fa-file-shield"></i><h4>Recebe o laudo</h4><p>Relatório em PDF com o que achamos e como remover cada ameaça.</p></div>
+    <div class="step"><span class="num">3</span><i class="fas fa-magnifying-glass-chart"></i><h4>Análise forense</h4><p>Verificamos spyware (IOCs), rastreadores, apps ocultos e configurações.</p></div>
+    <div class="step"><span class="num">4</span><i class="fas fa-file-shield"></i><h4>Recebe o laudo</h4><p>Relatório em PDF com o que encontramos e como agir em cada ponto.</p></div>
   </div>
 
-  <!-- CONFIANÇA -->
-  <h2 class="sec-title">Seus dados, <span>protegidos de verdade</span></h2>
-  <p class="sec-desc">A gente entende: você vai confiar o conteúdo do seu celular a alguém. Por isso a privacidade é o centro de tudo.</p>
+  <!-- CONFIANÇA / POR QUE CONFIAR -->
+  <h2 class="sec-title">Por que <span>confiar na iSecure</span></h2>
+  <p class="sec-desc">Segurança defensiva séria: você confia o conteúdo do seu aparelho a alguém — então a privacidade é o centro de tudo.</p>
   <div class="trust">
-    <div class="tcard"><i class="fas fa-trash-can"></i><h4>Apagamos tudo depois</h4><p>Concluído o laudo, seus dados são destruídos. Não guardamos nada.</p></div>
+    <div class="tcard"><i class="fas fa-microscope"></i><h4>Metodologia reconhecida</h4><p>Análise baseada em indicadores de comprometimento (IOCs) conhecidos, a mesma lógica de ferramentas forenses como o MVT.</p></div>
+    <div class="tcard"><i class="fas fa-trash-can"></i><h4>Apagamos tudo depois</h4><p>Concluído o laudo, os dados do backup são destruídos. Não guardamos seu conteúdo.</p></div>
+    <div class="tcard"><i class="fas fa-scale-balanced"></i><h4>Dentro da LGPD</h4><p>Tratamento de dados conforme a lei, com seu consentimento. Você no controle.</p></div>
     <div class="tcard"><i class="fas fa-user-shield"></i><h4>Sigilo total</h4><p>Ninguém saberá que você fez a verificação. Discrição absoluta.</p></div>
-    <div class="tcard"><i class="fas fa-scale-balanced"></i><h4>Dentro da LGPD</h4><p>Tratamento de dados conforme a lei. Você no controle, sempre.</p></div>
-    <div class="tcard"><i class="fas fa-mobile-screen"></i><h4>Você fica com o aparelho</h4><p>Processo 100% remoto. Seu celular nunca sai da sua mão.</p></div>
   </div>
 
-  <!-- DEPOIMENTOS -->
-  <h2 class="sec-title">Quem verificou, <span>dormiu tranquilo</span></h2>
-  <div class="testi">
-    <div class="tq"><div class="stars">★★★★★</div><p>"Eu tinha certeza que estava sendo monitorada. O laudo mostrou um app oculto que eu nem sabia que existia. Removi e minha paz voltou."</p><div class="who"><div class="av">M</div><div class="meta"><b>Mariana R.</b><span>São Paulo · SP</span></div></div></div>
-    <div class="tq"><div class="stars">★★★★★</div><p>"Comprei um celular usado e estava com receio. Fizeram a varredura completa e me explicaram tudo. Profissionalismo de verdade."</p><div class="who"><div class="av">C</div><div class="meta"><b>Carlos M.</b><span>Salvador · BA</span></div></div></div>
-    <div class="tq"><div class="stars">★★★★★</div><p>"Atendimento sigiloso e rápido. Em poucas horas recebi o relatório. Felizmente meu aparelho estava limpo — e agora tenho a prova disso."</p><div class="who"><div class="av">J</div><div class="meta"><b>Juliana F.</b><span>Manaus · AM</span></div></div></div>
-  </div>
+  <!-- EMPRESAS (B2B) -->
+  <section class="b2b">
+    <div class="b2b-head">
+      <div>
+        <h2>Para <span>empresas</span></h2>
+        <p>Postos, farmácias, hospitais, escolas, contabilidades e escritórios guardam dados sensíveis de clientes e pacientes. Um aparelho comprometido é uma porta aberta — e um risco de LGPD.</p>
+      </div>
+      <a class="btn-ghost" href="/empresas.html"><i class="fas fa-arrow-right"></i> Soluções para empresas</a>
+    </div>
+    <div class="verticais">
+      <div class="vert"><i class="fas fa-gas-pump"></i><b>Postos</b><span>PDV e gestão</span></div>
+      <div class="vert"><i class="fas fa-prescription-bottle-medical"></i><b>Farmácias</b><span>Dados de clientes</span></div>
+      <div class="vert"><i class="fas fa-hospital"></i><b>Hospitais</b><span>Dados de pacientes</span></div>
+      <div class="vert"><i class="fas fa-school"></i><b>Escolas</b><span>Alunos e responsáveis</span></div>
+      <div class="vert"><i class="fas fa-calculator"></i><b>Contabilidades</b><span>Dados fiscais</span></div>
+      <div class="vert"><i class="fas fa-briefcase"></i><b>Escritórios</b><span>Sigilo profissional</span></div>
+    </div>
+  </section>
 
   <!-- SERVIÇOS -->
   <div class="servicos">
     <h2 class="sec-title" style="margin-top:0">O que <span>oferecemos</span></h2>
     <div class="servicos-grid">
-      <div class="servico dest"><span class="badge-pop">Mais pedido</span><h4>🔍 Diagnóstico Completo</h4><p>Varredura forense de spyware, rastreadores, apps ocultos e assinaturas suspeitas.</p><span class="preco">A partir de R$ 97</span></div>
+      <div class="servico dest"><span class="badge-pop">Mais pedido</span><h4>🔍 Diagnóstico Completo</h4><p>Varredura forense de spyware, rastreadores, apps ocultos e assinaturas suspeitas, com laudo em PDF.</p><span class="preco">A partir de R$ 97</span></div>
       <div class="servico"><h4>🛠️ Limpeza & Hardening</h4><p>Removemos as ameaças e blindamos o aparelho contra novas invasões.</p><span class="preco">Sob consulta</span></div>
-      <div class="servico"><h4>📡 Monitoria Contínua</h4><p>Varreduras periódicas, alertas em tempo real e relatórios mensais.</p><span class="preco">Planos mensais</span></div>
-      <div class="servico"><h4>📊 Laudo Executivo</h4><p>Evidências, classificação de risco e plano de ação priorizado.</p><span class="preco">Sob consulta</span></div>
+      <div class="servico"><h4>📡 Monitoria Contínua</h4><p>Varreduras periódicas, alertas e relatórios — ideal para empresas.</p><span class="preco">Planos mensais</span></div>
+      <div class="servico"><h4>🏢 Auditoria Empresarial</h4><p>Análise de múltiplos aparelhos, relatório executivo e apoio à conformidade LGPD.</p><span class="preco">Sob consulta</span></div>
     </div>
   </div>
 
@@ -295,33 +390,33 @@ a{text-decoration:none;color:inherit}
   <h2 class="sec-title">Perguntas <span>frequentes</span></h2>
   <p class="sec-desc">As dúvidas que todo mundo tem antes de verificar.</p>
   <div class="faq">
-    <details class="q"><summary>A pessoa que me monitora vai descobrir que eu verifiquei? <i class="fas fa-plus"></i></summary><div class="a">Não. Todo o processo é feito de forma discreta, a partir de um backup do seu aparelho. Não enviamos nada, não alertamos ninguém. É 100% sigiloso.</div></details>
-    <details class="q"><summary>Funciona em iPhone e Android? <i class="fas fa-plus"></i></summary><div class="a">Sim. Atendemos iPhone (iOS), Android, e também Windows e macOS. Um diagnóstico para o seu aparelho, seja qual for.</div></details>
+    <details class="q"><summary>A pessoa que me monitora vai descobrir que eu verifiquei? <i class="fas fa-plus"></i></summary><div class="a">Não. Todo o processo é feito de forma discreta, a partir de um backup do seu aparelho. Não enviamos nada e não alertamos ninguém. É 100% sigiloso.</div></details>
+    <details class="q"><summary>Funciona em iPhone e Android? <i class="fas fa-plus"></i></summary><div class="a">Sim. Atendemos iPhone (iOS) e Android, com o diagnóstico adequado a cada sistema.</div></details>
+    <details class="q"><summary>Vocês atendem empresas? <i class="fas fa-plus"></i></summary><div class="a">Sim. Atendemos postos, farmácias, hospitais, escolas, contabilidades e escritórios que precisam proteger dados de clientes e cumprir a LGPD. Veja a página <a href="/empresas.html" style="color:var(--cyan)">Para empresas</a>.</div></details>
+    <details class="q"><summary>Como funciona a detecção de spyware? <i class="fas fa-plus"></i></summary><div class="a">Usamos metodologia forense baseada em indicadores de comprometimento (IOCs) conhecidos — a mesma abordagem de ferramentas como o MVT. Importante: a ausência de detecção reduz fortemente, mas não elimina em absoluto, ameaças desconhecidas (zero-day).</div></details>
     <details class="q"><summary>Preciso entregar meu celular? <i class="fas fa-plus"></i></summary><div class="a">Não. O processo é totalmente remoto. Você gera um backup seguindo nossas instruções e o seu aparelho nunca sai da sua mão.</div></details>
-    <details class="q"><summary>E se não encontrarem nada? <i class="fas fa-plus"></i></summary><div class="a">Melhor ainda — você recebe o laudo confirmando que o aparelho está limpo. Ter a prova de que está tudo certo também vale ouro pela sua tranquilidade.</div></details>
-    <details class="q"><summary>É legal fazer isso? <i class="fas fa-plus"></i></summary><div class="a">Sim. Você está analisando o seu próprio aparelho, que é seu direito. Atuamos dentro da lei e da LGPD para proteger a sua privacidade.</div></details>
-    <details class="q"><summary>Quanto tempo demora? <i class="fas fa-plus"></i></summary><div class="a">O atendimento começa em minutos no WhatsApp. A análise forense costuma ser entregue no mesmo dia, dependendo do tamanho do backup.</div></details>
+    <details class="q"><summary>É legal fazer isso? <i class="fas fa-plus"></i></summary><div class="a">Sim. Você está analisando o seu próprio aparelho, com seu consentimento, dentro da lei e da LGPD.</div></details>
   </div>
 
   <!-- CTA FINAL -->
   <div class="final">
-    <div class="urgency"><i class="fas fa-triangle-exclamation"></i> Cada dia parado é mais conversa e localização entregues a quem te monitora</div>
+    <div class="urgency"><i class="fas fa-triangle-exclamation"></i> Cada dia parado é mais conversa e localização expostas</div>
     <h2>A dúvida é pior que a verdade.</h2>
     <p>Descubra hoje o que está acontecendo dentro do seu celular. Sem rastros, sem julgamento.</p>
-    <a class="btn-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
+    <a class="btn-wa" href="#" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank" rel="noopener">
       <i class="fab fa-whatsapp"></i> Quero verificar agora
     </a>
   </div>
 
   <footer class="footer">
     &copy; 2026 <strong>iSecure Diagnostics</strong> — Forensic Intelligence.<br>
-    <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a>
-    <p class="disc">As estatísticas e relatos exibidos são ilustrativos e representam a atuação da iSecure. Resultados variam conforme cada aparelho. A iSecure atua na análise de dispositivos do próprio solicitante, em conformidade com a LGPD.</p>
+    <a href="/empresas.html">Para empresas</a> · <a href="#como">Como funciona</a>
+    <p class="disc">A iSecure realiza a análise de dispositivos do próprio solicitante, com consentimento e em conformidade com a LGPD. A detecção cobre indicadores de comprometimento (IOCs) conhecidos; a ausência de detecção não garante, de forma absoluta, a inexistência de ameaças desconhecidas.</p>
   </footer>
 </div>
 
 <!-- BOTÃO FLUTUANTE -->
-<a class="float-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
+<a class="float-wa" href="#" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank" rel="noopener">
   <i class="fab fa-whatsapp"></i> Falar agora
 </a>
 
@@ -331,64 +426,6 @@ var WA = "5569999438321"; // 69 99943-8321
 document.querySelectorAll('[data-wa]').forEach(function(a){
   a.href = "https://wa.me/"+WA+"?text="+encodeURIComponent(a.getAttribute('data-msg'));
 });
-
-// ===== CONTADORES ANIMADOS =====
-function animateCount(el){
-  var target = +el.getAttribute('data-count'), cur = 0, step = target/60;
-  var t = setInterval(function(){
-    cur += step;
-    if(cur >= target){ cur = target; clearInterval(t); }
-    el.textContent = Math.floor(cur).toLocaleString('pt-BR');
-  }, 22);
-}
-var counted = false;
-function tryCount(){
-  if(counted) return; counted = true;
-  document.querySelectorAll('[data-count]').forEach(animateCount);
-}
-window.addEventListener('load', tryCount);
-setTimeout(tryCount, 600);
-
-// análises "hoje" sobe devagar
-var today = 137;
-var tEl = document.getElementById('today');
-function bumpToday(){ tEl.textContent = today.toLocaleString('pt-BR'); }
-bumpToday();
-setInterval(function(){ today += Math.floor(Math.random()*2)+1; bumpToday(); }, 5200);
-
-// online flutua
-var onEl = document.getElementById('online');
-setInterval(function(){
-  var base = 214 + Math.floor(Math.random()*40) - 18;
-  onEl.textContent = base;
-}, 3800);
-
-// ===== FEED AO VIVO (Brasil todo) =====
-var nomes = ["Ana","Lucas","Beatriz","Rafael","Camila","Bruno","Fernanda","Diego","Patrícia","Thiago","Larissa","Gustavo","Vanessa","Marcelo","Aline","Rodrigo","Juliana","Felipe","Carla","André","Letícia","Vinícius","Sabrina","Eduardo","Priscila","Gabriel","Renata","Matheus","Tatiane","Leonardo"];
-var sobren = ["S.","M.","R.","L.","F.","A.","C.","P.","B.","G.","T.","O.","N.","V."];
-var cidades = ["São Paulo · SP","Rio de Janeiro · RJ","Belo Horizonte · MG","Salvador · BA","Fortaleza · CE","Curitiba · PR","Manaus · AM","Recife · PE","Porto Alegre · RS","Brasília · DF","Goiânia · GO","Belém · PA","Campinas · SP","Guarulhos · SP","Maceió · AL","Natal · RN","João Pessoa · PB","Teresina · PI","Campo Grande · MS","Cuiabá · MT","Porto Velho · RO","Florianópolis · SC","Vitória · ES","São Luís · MA","Aracaju · SE","Uberlândia · MG","Ribeirão Preto · SP","Sorocaba · SP","Niterói · RJ","Caxias do Sul · RS"];
-var apar = ["iPhone 13","iPhone 15","Galaxy S23","iPhone 12","Galaxy A54","Redmi Note 12","iPhone 14","Motorola Edge","Galaxy S22","iPhone 11","Poco X5","Galaxy A34"];
-
-function rand(a){ return a[Math.floor(Math.random()*a.length)]; }
-function mkItem(){
-  var nome = rand(nomes)+" "+rand(sobren);
-  var threat = Math.random() < 0.34;
-  var res = threat
-    ? '<span class="res threat"><i class="fas fa-triangle-exclamation"></i> '+(Math.floor(Math.random()*3)+1)+' ameaça(s)</span>'
-    : '<span class="res clean"><i class="fas fa-check"></i> Limpo</span>';
-  var d = document.createElement('div');
-  d.className = 'feed-item';
-  d.innerHTML = '<div class="av">'+nome[0]+'</div>'+
-    '<div class="tx"><b>'+nome+'</b> verificou um <b>'+rand(apar)+'</b>'+
-    '<span class="city"><i class="fas fa-location-dot"></i> '+rand(cidades)+'</span></div>'+res;
-  return d;
-}
-var track = document.getElementById('feedTrack');
-for(var i=0;i<5;i++) track.appendChild(mkItem());
-setInterval(function(){
-  track.insertBefore(mkItem(), track.firstChild);
-  if(track.children.length > 6) track.removeChild(track.lastChild);
-}, 2600);
 </script>
 </body>
 </html>

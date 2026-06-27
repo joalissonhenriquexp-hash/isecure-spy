@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iSecure para Empresas · Segurança de dados, LGPD e análise de dispositivos</title>
+<meta name="description" content="Proteja os dados de clientes e pacientes da sua empresa. Análise forense de dispositivos para postos, farmácias, hospitais, escolas e contabilidades — detecção de spyware, auditoria e apoio à LGPD." />
+<meta name="keywords" content="segurança de dados empresa, LGPD empresa, proteção de dados clientes, análise forense dispositivos corporativos, segurança hospital, segurança farmácia, segurança escola, contabilidade dados" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#070b16" />
+<link rel="canonical" href="https://isecure-spy.vercel.app/empresas.html" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="iSecure" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="iSecure para Empresas · Segurança de dados e LGPD" />
+<meta property="og:description" content="Análise forense de dispositivos e apoio à LGPD para empresas com dados sensíveis: postos, farmácias, hospitais, escolas e contabilidades." />
+<meta property="og:url" content="https://isecure-spy.vercel.app/empresas.html" />
+<meta property="og:image" content="https://isecure-spy.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://isecure-spy.vercel.app/og.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"iSecure para Empresas",
+  "serviceType":"Segurança de dispositivos e apoio à LGPD para empresas",
+  "areaServed":"BR",
+  "provider":{"@type":"Organization","name":"iSecure Diagnostics","url":"https://isecure-spy.vercel.app/"},
+  "audience":{"@type":"BusinessAudience","name":"Empresas com dados sensíveis"},
+  "description":"Análise forense de dispositivos corporativos, detecção de spyware e auditoria de segurança para postos, farmácias, hospitais, escolas e contabilidades."
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070b16;--ink:#e8edf5;--muted:#8a9bb0;--dim:#5a6b85;--blue:#0066FF;--cyan:#00D4FF;--ok:#00ff9d;--warn:#ffb020;--red:#ff4d6d}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.bg-fx{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 80% 10%,rgba(0,102,255,.14),transparent 45%),radial-gradient(circle at 10% 90%,rgba(0,212,255,.10),transparent 45%),var(--bg)}
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:24px 22px 120px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:6px 0 8px;flex-wrap:wrap;gap:12px}
+.logo{font-size:24px;font-weight:900;letter-spacing:-.5px}
+.logo span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo small{display:block;font-size:10px;font-weight:500;color:#4a6a9f;letter-spacing:3px;text-transform:uppercase;margin-top:3px}
+.back{font-size:14px;font-weight:600;color:var(--muted)}
+.back:hover{color:var(--ink)}
+.hero{text-align:center;padding:42px 0 14px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);color:var(--cyan);font-size:11.5px;font-weight:700;padding:7px 18px;border-radius:40px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(0,212,255,.18);margin-bottom:22px}
+.hero h1{font-size:46px;font-weight:900;line-height:1.06;letter-spacing:-1.1px;margin-bottom:16px}
+.hero h1 span{background:linear-gradient(135deg,#fff 10%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:660px;margin:0 auto 28px}
+.hero p b{color:var(--ink)}
+.btn-wa{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25D366,#1ebd5a);color:#fff;padding:18px 42px;border-radius:60px;font-size:18px;font-weight:800;box-shadow:0 10px 38px rgba(37,211,102,.32);transition:.25s;border:none;cursor:pointer}
+.btn-wa:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 50px rgba(37,211,102,.5)}
+.sec-title{text-align:center;font-size:28px;font-weight:800;letter-spacing:-.6px;margin:46px 0 8px}
+.sec-title span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-desc{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 30px;font-size:15.5px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px 20px}
+.card i{font-size:24px;color:var(--cyan);margin-bottom:12px}
+.card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.55}
+.pain{border-left:3px solid var(--red)}
+.pain i{color:var(--red)}
+.pacote{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:26px 22px;border-top:3px solid var(--blue)}
+.pacote.dest{border-top-color:var(--ok);background:rgba(0,255,157,.04)}
+.pacote h4{font-size:18px;font-weight:800;margin-bottom:6px}
+.pacote .preco{display:inline-block;font-size:13px;font-weight:700;color:var(--cyan);background:rgba(0,212,255,.08);padding:5px 14px;border-radius:20px;margin-bottom:14px}
+.pacote ul{list-style:none;font-size:13.5px;color:var(--muted)}
+.pacote li{padding:5px 0 5px 24px;position:relative}
+.pacote li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--ok);position:absolute;left:0;font-size:12px}
+/* form */
+.formbox{background:linear-gradient(135deg,rgba(0,102,255,.10),rgba(0,212,255,.05));border:1px solid rgba(0,212,255,.2);border-radius:26px;padding:38px 30px;max-width:640px;margin:0 auto}
+.formbox h2{font-size:26px;font-weight:900;text-align:center;margin-bottom:6px}
+.formbox p.s{text-align:center;color:var(--muted);font-size:14.5px;margin-bottom:24px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.field input,.field select{width:100%;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 15px;color:var(--ink);font-family:inherit;font-size:14.5px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cyan)}
+.formbox .btn-wa{width:100%;justify-content:center;margin-top:8px}
+.formnote{font-size:11.5px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.5}
+.footer{text-align:center;font-size:12.5px;color:var(--dim);border-top:1px solid #15203a;padding-top:26px;margin-top:60px}
+.footer a{color:var(--blue)}
+@media(max-width:560px){.hero h1{font-size:33px}.hero p{font-size:16px}.sec-title{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="bg-fx"></div>
+<div class="wrap">
+  <header class="header">
+    <a href="/" class="logo"><span>iSecure</span><small>Forensic Intelligence</small></a>
+    <a href="/" class="back"><i class="fas fa-arrow-left"></i> Voltar</a>
+  </header>
+
+  <section class="hero">
+    <div class="tag"><i class="fas fa-building-shield"></i> iSecure para Empresas</div>
+    <h1>A segurança dos dados dos seus <span>clientes começa nos dispositivos.</span></h1>
+    <p>Um único celular ou computador comprometido na sua operação pode <b>vazar dados de clientes,
+      pacientes e do financeiro</b> — e virar um problema de <b>LGPD</b>. A iSecure faz a análise
+      forense dos seus dispositivos e te entrega um plano de ação.</p>
+    <a class="btn-wa" href="#contato"><i class="fab fa-whatsapp"></i> Falar com um especialista</a>
+  </section>
+
+  <h2 class="sec-title">Feito para o seu <span>segmento</span></h2>
+  <p class="sec-desc">Cada negócio guarda um tipo de dado sensível. A análise se adapta à sua realidade.</p>
+  <div class="grid g3">
+    <div class="card"><i class="fas fa-gas-pump"></i><h4>Postos de combustível</h4><p>PDV, sistema de gestão e dados de pagamento dos clientes protegidos contra acesso indevido.</p></div>
+    <div class="card"><i class="fas fa-prescription-bottle-medical"></i><h4>Farmácias</h4><p>Dados de clientes, receitas e programas de fidelidade — informação sensível que não pode vazar.</p></div>
+    <div class="card"><i class="fas fa-hospital"></i><h4>Hospitais e clínicas</h4><p>Prontuários e dados de pacientes têm proteção reforçada por lei. Reduza o risco nos dispositivos.</p></div>
+    <div class="card"><i class="fas fa-school"></i><h4>Escolas particulares</h4><p>Dados de alunos e responsáveis (muitos menores de idade) exigem cuidado redobrado com LGPD.</p></div>
+    <div class="card"><i class="fas fa-calculator"></i><h4>Contabilidades</h4><p>Dados fiscais e financeiros de dezenas de empresas concentrados — alvo de alto valor.</p></div>
+    <div class="card"><i class="fas fa-briefcase"></i><h4>Escritórios e consultórios</h4><p>Sigilo profissional de advogados, médicos e consultores começa em dispositivos seguros.</p></div>
+  </div>
+
+  <h2 class="sec-title">Os riscos que a gente <span>elimina</span></h2>
+  <p class="sec-desc">O que está em jogo quando um dispositivo da sua empresa é comprometido.</p>
+  <div class="grid g2">
+    <div class="card pain"><i class="fas fa-database"></i><h4>Vazamento de dados de clientes</h4><p>Spyware e apps maliciosos podem exfiltrar contatos, fotos, mensagens e dados de pagamento.</p></div>
+    <div class="card pain"><i class="fas fa-scale-balanced"></i><h4>Multas e responsabilidade na LGPD</h4><p>Incidentes com dados pessoais podem gerar sanções. Prevenção e documentação reduzem o risco.</p></div>
+    <div class="card pain"><i class="fas fa-user-secret"></i><h4>Espionagem da concorrência</h4><p>Estratégias, preços e carteira de clientes vazando por um aparelho monitorado.</p></div>
+    <div class="card pain"><i class="fas fa-user-slash"></i><h4>Risco interno (funcionários)</h4><p>Stalkerware e apps de monitoramento instalados em aparelhos da operação, com ou sem intenção.</p></div>
+  </div>
+
+  <h2 class="sec-title">Pacotes <span>empresariais</span></h2>
+  <p class="sec-desc">Do diagnóstico pontual ao monitoramento contínuo. Valores sob consulta conforme o nº de dispositivos.</p>
+  <div class="grid g3">
+    <div class="pacote"><h4>Diagnóstico Corporativo</h4><span class="preco">Por dispositivo</span><ul><li>Análise forense de cada aparelho</li><li>Detecção de spyware (IOCs) e rastreadores</li><li>Laudo em PDF por dispositivo</li></ul></div>
+    <div class="pacote dest"><h4>Auditoria + LGPD</h4><span class="preco">Mais completo</span><ul><li>Vários dispositivos da operação</li><li>Relatório executivo consolidado</li><li>Recomendações de conformidade LGPD</li><li>Reunião de apresentação dos achados</li></ul></div>
+    <div class="pacote"><h4>Monitoria Contínua</h4><span class="preco">Plano mensal</span><ul><li>Varreduras periódicas</li><li>Alertas e relatórios recorrentes</li><li>Suporte prioritário</li></ul></div>
+  </div>
+
+  <!-- CONTATO / LEAD B2B -->
+  <h2 class="sec-title" id="contato">Solicite uma <span>proposta</span></h2>
+  <p class="sec-desc">Preencha e a gente continua no WhatsApp com uma proposta sob medida.</p>
+  <div class="formbox">
+    <h2>Atendimento empresarial</h2>
+    <p class="s">Resposta em minutos, em horário comercial.</p>
+    <form id="leadForm" onsubmit="return enviarLead(event)">
+      <div class="field"><label>Nome do responsável</label><input id="f_nome" required placeholder="Seu nome" /></div>
+      <div class="field"><label>Empresa</label><input id="f_empresa" required placeholder="Nome da empresa" /></div>
+      <div class="field"><label>Segmento</label>
+        <select id="f_seg" required>
+          <option value="">Selecione...</option>
+          <option>Posto de combustível</option>
+          <option>Farmácia</option>
+          <option>Hospital / Clínica</option>
+          <option>Escola particular</option>
+          <option>Contabilidade</option>
+          <option>Escritório / Consultório</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="field"><label>Quantos dispositivos (aprox.)</label>
+        <select id="f_qtd" required>
+          <option value="">Selecione...</option>
+          <option>1 a 3</option>
+          <option>4 a 10</option>
+          <option>11 a 30</option>
+          <option>Mais de 30</option>
+        </select>
+      </div>
+      <div class="field"><label>Seu WhatsApp</label><input id="f_zap" required placeholder="(00) 00000-0000" /></div>
+      <button type="submit" class="btn-wa"><i class="fab fa-whatsapp"></i> Enviar e falar no WhatsApp</button>
+    </form>
+    <p class="formnote">Ao enviar, abrimos o WhatsApp com os dados preenchidos. Tratamos suas informações com sigilo, conforme a LGPD.</p>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 <strong>iSecure Diagnostics</strong> — Forensic Intelligence.<br>
+    <a href="/">Início</a> · <a href="#contato">Falar com a gente</a>
+  </footer>
+</div>
+
+<script>
+var WA = "5569999438321";
+function enviarLead(e){
+  e.preventDefault();
+  var nome=document.getElementById('f_nome').value.trim();
+  var emp =document.getElementById('f_empresa').value.trim();
+  var seg =document.getElementById('f_seg').value;
+  var qtd =document.getElementById('f_qtd').value;
+  var zap =document.getElementById('f_zap').value.trim();
+  var msg = "Olá! Quero uma proposta empresarial da iSecure.\n\n"+
+    "• Responsável: "+nome+"\n"+
+    "• Empresa: "+emp+"\n"+
+    "• Segmento: "+seg+"\n"+
+    "• Dispositivos: "+qtd+"\n"+
+    "• WhatsApp: "+zap;
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg), "_blank");
+  return false;
+}
+</script>
+</body>
+</html>
