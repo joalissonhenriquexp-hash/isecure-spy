@@ -1,13 +1,301 @@
-<!DOCTYPE html> 
-<html lang="pt-BR"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>iSecure Spy - Prote��o Completa</title> 
-</head> 
-<body style="background-color: #0d1117; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;"> 
-    <h1>iSecure Spy</h1> 
-    <p>Sua nova landing page est� sendo constru�da aqui.</p> 
-</body> 
-</html> 
-<!-- Deploy Trigger --> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iSecure · Segurança Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0e1a; color: #e8edf5; overflow-x: hidden; }
+
+        /* ========== VÍDEO DE FUNDO REAL E DIRETO ========== */
+        .video-wrapper {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh; z-index: 0;
+            overflow: hidden;
+        }
+        .video-wrapper video {
+            width: 100vw; height: 100vh;
+            object-fit: cover;
+            opacity: 0.2;
+            filter: grayscale(0.4) contrast(1.3);
+        }
+        .video-overlay {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(0,10,30,0.4), rgba(0,0,0,0.85));
+            z-index: 1;
+        }
+
+        /* ========== CONTEÚDO ========== */
+        .container {
+            position: relative; z-index: 2;
+            max-width: 1100px; margin: 0 auto;
+            padding: 30px 24px 60px;
+        }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0 30px; flex-wrap: wrap; gap: 15px;
+        }
+        .logo {
+            font-size: 28px; font-weight: 900; letter-spacing: -0.5px;
+        }
+        .logo span {
+            background: linear-gradient(135deg, #0066FF, #00D4FF);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .logo small {
+            display: block; font-size: 11px; font-weight: 400;
+            color: #4a6a9f; -webkit-text-fill-color: #4a6a9f;
+            letter-spacing: 3px; text-transform: uppercase;
+        }
+        .badge-top {
+            background: rgba(0,102,255,0.15);
+            border: 1px solid rgba(0,102,255,0.25);
+            padding: 6px 18px; border-radius: 40px;
+            font-size: 12px; font-weight: 600; color: #00D4FF;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .badge-top i { font-size: 10px; color: #00ff88; }
+
+        .hero {
+            display: flex; flex-wrap: wrap; align-items: center;
+            gap: 40px; margin: 20px 0 30px;
+        }
+        .hero-content { flex: 1 1 480px; }
+        .hero-content .tag {
+            display: inline-block;
+            background: rgba(0,212,255,0.08);
+            color: #00D4FF; font-size: 11px; font-weight: 700;
+            padding: 6px 18px; border-radius: 40px;
+            letter-spacing: 1.8px; text-transform: uppercase;
+            margin-bottom: 18px;
+            border: 1px solid rgba(0,212,255,0.15);
+        }
+        .hero-content h1 {
+            font-size: 48px; font-weight: 900; line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, #0066FF, #00D4FF);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-content .sub {
+            font-size: 18px; color: #8a9bb0; line-height: 1.6;
+            margin-bottom: 24px;
+            border-left: 3px solid #00D4FF;
+            padding-left: 20px;
+        }
+        .slogan-destaque {
+            font-size: 20px; font-weight: 700; color: #00D4FF;
+            margin-bottom: 28px;
+            background: rgba(0,212,255,0.05);
+            padding: 16px 20px; border-radius: 12px;
+            border: 1px solid rgba(0,212,255,0.1);
+        }
+        .slogan-destaque i { margin-right: 10px; }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 20px; margin: 50px 0 40px;
+        }
+        .benefit-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px; padding: 26px 20px;
+            text-align: center; transition: 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,102,255,0.3);
+            background: rgba(0,102,255,0.06);
+        }
+        .benefit-card i {
+            font-size: 34px;
+            background: linear-gradient(135deg, #0066FF, #00D4FF);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .benefit-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+        .benefit-card p { font-size: 14px; color: #6a7f9f; line-height: 1.5; }
+
+        .servicos {
+            background: rgba(255,255,255,0.02);
+            border-radius: 28px; padding: 40px 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin: 30px 0 40px;
+        }
+        .servicos h2 {
+            text-align: center; font-size: 28px; font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .servicos h2 span { color: #00D4FF; }
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 20px;
+        }
+        .servico-item {
+            background: rgba(0,0,0,0.3);
+            border-radius: 16px; padding: 22px 18px;
+            border-left: 3px solid #0066FF;
+            transition: 0.3s;
+        }
+        .servico-item:hover {
+            border-left-color: #00D4FF;
+            background: rgba(0,102,255,0.05);
+        }
+        .servico-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .servico-item p { font-size: 14px; color: #8a9bb0; line-height: 1.5; }
+        .servico-item .preco {
+            display: inline-block; margin-top: 10px;
+            font-size: 13px; font-weight: 700; color: #00D4FF;
+            background: rgba(0,212,255,0.08);
+            padding: 4px 14px; border-radius: 20px;
+        }
+
+        .cta { text-align: center; margin-top: 20px; }
+        .cta .btn-whatsapp {
+            display: inline-block;
+            background: #25D366; color: #fff;
+            padding: 18px 56px; border-radius: 60px;
+            font-size: 20px; font-weight: 700;
+            text-decoration: none; transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(37,211,102,0.3);
+        }
+        .cta .btn-whatsapp:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 45px rgba(37,211,102,0.5);
+        }
+        .cta .btn-whatsapp i { margin-right: 10px; }
+        .cta p { color: #6a7f9f; margin-top: 16px; font-size: 14px; }
+        .cta p i { color: #00ff88; }
+
+        .footer {
+            margin-top: 50px; text-align: center;
+            font-size: 13px; color: #3a4a62;
+            border-top: 1px solid #1a2333; padding-top: 28px;
+        }
+        .footer a { color: #0066FF; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 32px; }
+            .slogan-destaque { font-size: 17px; padding: 14px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .servicos { padding: 28px 16px; }
+            .servicos-grid { grid-template-columns: 1fr; }
+            .cta .btn-whatsapp { padding: 14px 32px; font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+            <source src="https://player.vimeo.com/external/459389137.hd.mp4?s=87af39d33010f3408a0d0a2f1b4c4890d984cfb7&profile_id=170&oauth2_token_id=57447761" type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">
+                <span>iSecure</span>
+                <small>Forensic Intelligence</small>
+            </div>
+            <div class="badge-top">
+                <i class="fas fa-shield-alt"></i> 100% Criptografado
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="tag"><i class="fas fa-robot"></i> Powered by AI Forensics</div>
+                <h1>
+                    Segurança digital<br />
+                    <span class="highlight">não é um evento.</span>
+                </h1>
+                <div class="sub">
+                    É um processo contínuo. Novas ameaças surgem todos os dias.<br />
+                    O que está seguro hoje pode não estar amanhã.
+                </div>
+                <div class="slogan-destaque">
+                    <i class="fas fa-shield-halved"></i>
+                    "Você fecha a porta, mas o ladrão descobre uma janela nova todo dia."
+                </div>
+            </div>
+        </section>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <i class="fas fa-user-shield"></i>
+                <h4>🔒 Dados protegidos</h4>
+                <p>Após o diagnóstico, todos os dados são apagados. Garantia de privacidade total.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-brain"></i>
+                <h4>🧠 Inteligência forense</h4>
+                <p>Detectamos espiões, rastreadores e caches ocultos.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-file-pdf"></i>
+                <h4>📄 Laudo executivo</h4>
+                <p>Relatório detalhado com passo a passo para resolver cada problema.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h4>📱 Multiplataforma</h4>
+                <p>iPhone, Android, Windows e macOS. Um diagnóstico para todos.</p>
+            </div>
+        </div>
+
+        <div class="servicos">
+            <h2>🛡️ O que <span>oferecemos</span></h2>
+            <div class="servicos-grid">
+                <div class="servico-item">
+                    <h4>🔍 Diagnóstico Completo</h4>
+                    <p>Varredura forense para spyware, lixo digital e assinaturas ocultas.</p>
+                    <span class="preco">A partir de R$ 97</span>
+                </div>
+                <div class="servico-item">
+                    <h4>🛠️ Correção e Hardening</h4>
+                    <p>Implementação de medidas de segurança para eliminar vulnerabilidades.</p>
+                    <span class="preco">Consultar</span>
+                </div>
+                <div class="servico-item">
+                    <h4>📡 Monitoria Contínua</h4>
+                    <p>Alertas em tempo real, varreduras periódicas e relatórios mensais.</p>
+                    <span class="preco">A partir de R$ 1.500/mês</span>
+                </div>
+                <div class="servico-item">
+                    <h4>📊 Relatório Executivo</h4>
+                    <p>Evidências, classificação de risco e plano de ação priorizado.</p>
+                    <span class="preco">Sob consulta</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="https://wa.me/5569999999999?text=Olá! Quero proteger minha empresa com a iSecure." class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar com um especialista
+            </a>
+            <p><i class="fas fa-lock"></i> 100% seguro · Resposta em até 2 horas</p>
+        </div>
+
+        <footer class="footer">
+            &copy; 2026 <strong>iSecure Diagnostics</strong> — Forensic Intelligence.<br />
+            <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
