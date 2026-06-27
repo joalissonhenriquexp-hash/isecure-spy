@@ -1,301 +1,394 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iSecure · Segurança Digital</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0e1a; color: #e8edf5; overflow-x: hidden; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iSecure · Seu celular está sendo monitorado? Descubra agora.</title>
+<meta name="description" content="Diagnóstico forense que revela spyware, rastreadores e invasões no seu celular. Sigilo absoluto. Laudo em PDF. Mais de 18 mil aparelhos analisados no Brasil." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#070b16;--bg2:#0a0f1f;--ink:#e8edf5;--muted:#8a9bb0;--dim:#5a6b85;
+  --blue:#0066FF;--cyan:#00D4FF;--green:#25D366;--ok:#00ff9d;--warn:#ffb020;--red:#ff4d6d;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.5}
+a{text-decoration:none;color:inherit}
 
-        /* ========== VÍDEO DE FUNDO REAL E DIRETO ========== */
-        .video-wrapper {
-            position: fixed; top: 0; left: 0;
-            width: 100vw; height: 100vh; z-index: 0;
-            overflow: hidden;
-        }
-        .video-wrapper video {
-            width: 100vw; height: 100vh;
-            object-fit: cover;
-            opacity: 0.2;
-            filter: grayscale(0.4) contrast(1.3);
-        }
-        .video-overlay {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at 30% 30%, rgba(0,10,30,0.4), rgba(0,0,0,0.85));
-            z-index: 1;
-        }
+/* ===== RADAR DE FUNDO (CSS puro, sem vídeo externo) ===== */
+.bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;background:
+  radial-gradient(circle at 75% 15%,rgba(0,102,255,.14),transparent 45%),
+  radial-gradient(circle at 15% 85%,rgba(0,212,255,.10),transparent 45%),var(--bg)}
+.grid-lines{position:absolute;inset:-50%;background-image:
+  linear-gradient(rgba(0,212,255,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,212,255,.05) 1px,transparent 1px);
+  background-size:46px 46px;transform:perspective(400px) rotateX(60deg);transform-origin:center top;
+  animation:grid 18s linear infinite}
+@keyframes grid{from{background-position:0 0}to{background-position:0 46px}}
+.radar{position:absolute;top:8%;right:-120px;width:520px;height:520px;border-radius:50%;
+  border:1px solid rgba(0,212,255,.12);opacity:.5}
+.radar::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(0,212,255,.18),transparent 30%);animation:spin 5s linear infinite}
+.radar::after{content:"";position:absolute;inset:28%;border-radius:50%;border:1px solid rgba(0,212,255,.12)}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-        /* ========== CONTEÚDO ========== */
-        .container {
-            position: relative; z-index: 2;
-            max-width: 1100px; margin: 0 auto;
-            padding: 30px 24px 60px;
-        }
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:24px 22px 120px}
 
-        .header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 0 30px; flex-wrap: wrap; gap: 15px;
-        }
-        .logo {
-            font-size: 28px; font-weight: 900; letter-spacing: -0.5px;
-        }
-        .logo span {
-            background: linear-gradient(135deg, #0066FF, #00D4FF);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .logo small {
-            display: block; font-size: 11px; font-weight: 400;
-            color: #4a6a9f; -webkit-text-fill-color: #4a6a9f;
-            letter-spacing: 3px; text-transform: uppercase;
-        }
-        .badge-top {
-            background: rgba(0,102,255,0.15);
-            border: 1px solid rgba(0,102,255,0.25);
-            padding: 6px 18px; border-radius: 40px;
-            font-size: 12px; font-weight: 600; color: #00D4FF;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .badge-top i { font-size: 10px; color: #00ff88; }
+/* ===== HEADER ===== */
+.header{display:flex;justify-content:space-between;align-items:center;padding:6px 0 8px;flex-wrap:wrap;gap:12px}
+.logo{font-size:26px;font-weight:900;letter-spacing:-.5px;line-height:1}
+.logo span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo small{display:block;font-size:10px;font-weight:500;color:#4a6a9f;letter-spacing:3px;text-transform:uppercase;margin-top:3px}
+.live-pill{display:flex;align-items:center;gap:8px;background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.2);
+  padding:7px 16px;border-radius:40px;font-size:12.5px;font-weight:600;color:var(--ok)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(0,255,157,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,255,157,.5)}70%{box-shadow:0 0 0 9px rgba(0,255,157,0)}100%{box-shadow:0 0 0 0 rgba(0,255,157,0)}}
 
-        .hero {
-            display: flex; flex-wrap: wrap; align-items: center;
-            gap: 40px; margin: 20px 0 30px;
-        }
-        .hero-content { flex: 1 1 480px; }
-        .hero-content .tag {
-            display: inline-block;
-            background: rgba(0,212,255,0.08);
-            color: #00D4FF; font-size: 11px; font-weight: 700;
-            padding: 6px 18px; border-radius: 40px;
-            letter-spacing: 1.8px; text-transform: uppercase;
-            margin-bottom: 18px;
-            border: 1px solid rgba(0,212,255,0.15);
-        }
-        .hero-content h1 {
-            font-size: 48px; font-weight: 900; line-height: 1.1;
-            margin-bottom: 16px;
-        }
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #0066FF, #00D4FF);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero-content .sub {
-            font-size: 18px; color: #8a9bb0; line-height: 1.6;
-            margin-bottom: 24px;
-            border-left: 3px solid #00D4FF;
-            padding-left: 20px;
-        }
-        .slogan-destaque {
-            font-size: 20px; font-weight: 700; color: #00D4FF;
-            margin-bottom: 28px;
-            background: rgba(0,212,255,0.05);
-            padding: 16px 20px; border-radius: 12px;
-            border: 1px solid rgba(0,212,255,0.1);
-        }
-        .slogan-destaque i { margin-right: 10px; }
+/* ===== HERO ===== */
+.hero{padding:34px 0 10px;text-align:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.08);color:var(--cyan);
+  font-size:11.5px;font-weight:700;padding:7px 18px;border-radius:40px;letter-spacing:1.5px;text-transform:uppercase;
+  border:1px solid rgba(0,212,255,.18);margin-bottom:22px}
+.hero h1{font-size:52px;font-weight:900;line-height:1.05;letter-spacing:-1.2px;margin-bottom:18px}
+.hero h1 .hl{background:linear-gradient(135deg,#fff 10%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .red{color:var(--red)}
+.hero .sub{font-size:19px;color:var(--muted);max-width:620px;margin:0 auto 30px}
+.hero .sub b{color:var(--ink)}
 
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-            gap: 20px; margin: 50px 0 40px;
-        }
-        .benefit-card {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 20px; padding: 26px 20px;
-            text-align: center; transition: 0.3s;
-        }
-        .benefit-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0,102,255,0.3);
-            background: rgba(0,102,255,0.06);
-        }
-        .benefit-card i {
-            font-size: 34px;
-            background: linear-gradient(135deg, #0066FF, #00D4FF);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-        }
-        .benefit-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-        .benefit-card p { font-size: 14px; color: #6a7f9f; line-height: 1.5; }
+/* sintomas */
+.symp{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:760px;margin:0 auto 34px}
+.symp span{background:rgba(255,77,109,.06);border:1px solid rgba(255,77,109,.18);color:#ffb6c4;
+  font-size:13.5px;font-weight:500;padding:9px 16px;border-radius:12px;display:flex;align-items:center;gap:9px}
+.symp span i{color:var(--red);font-size:12px}
 
-        .servicos {
-            background: rgba(255,255,255,0.02);
-            border-radius: 28px; padding: 40px 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin: 30px 0 40px;
-        }
-        .servicos h2 {
-            text-align: center; font-size: 28px; font-weight: 700;
-            margin-bottom: 30px;
-        }
-        .servicos h2 span { color: #00D4FF; }
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap: 20px;
-        }
-        .servico-item {
-            background: rgba(0,0,0,0.3);
-            border-radius: 16px; padding: 22px 18px;
-            border-left: 3px solid #0066FF;
-            transition: 0.3s;
-        }
-        .servico-item:hover {
-            border-left-color: #00D4FF;
-            background: rgba(0,102,255,0.05);
-        }
-        .servico-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-        .servico-item p { font-size: 14px; color: #8a9bb0; line-height: 1.5; }
-        .servico-item .preco {
-            display: inline-block; margin-top: 10px;
-            font-size: 13px; font-weight: 700; color: #00D4FF;
-            background: rgba(0,212,255,0.08);
-            padding: 4px 14px; border-radius: 20px;
-        }
+/* ===== STATS AO VIVO ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 40px}
+.stat{background:linear-gradient(180deg,rgba(0,102,255,.07),rgba(255,255,255,.02));
+  border:1px solid rgba(0,212,255,.12);border-radius:18px;padding:22px 14px;text-align:center}
+.stat .n{font-size:34px;font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--cyan),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .l{font-size:12px;color:var(--dim);margin-top:5px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.stat.live .n{color:var(--ok);background:none;-webkit-text-fill-color:var(--ok)}
 
-        .cta { text-align: center; margin-top: 20px; }
-        .cta .btn-whatsapp {
-            display: inline-block;
-            background: #25D366; color: #fff;
-            padding: 18px 56px; border-radius: 60px;
-            font-size: 20px; font-weight: 700;
-            text-decoration: none; transition: 0.3s;
-            box-shadow: 0 8px 30px rgba(37,211,102,0.3);
-        }
-        .cta .btn-whatsapp:hover {
-            transform: scale(1.04);
-            box-shadow: 0 12px 45px rgba(37,211,102,0.5);
-        }
-        .cta .btn-whatsapp i { margin-right: 10px; }
-        .cta p { color: #6a7f9f; margin-top: 16px; font-size: 14px; }
-        .cta p i { color: #00ff88; }
+/* ===== CTA principal ===== */
+.cta-main{text-align:center;margin:6px 0 50px}
+.btn-wa{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25D366,#1ebd5a);color:#fff;
+  padding:20px 50px;border-radius:60px;font-size:20px;font-weight:800;box-shadow:0 10px 38px rgba(37,211,102,.32);
+  transition:.25s;border:none;cursor:pointer}
+.btn-wa:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 50px rgba(37,211,102,.5)}
+.btn-wa i{font-size:24px}
+.cta-sub{color:var(--dim);margin-top:14px;font-size:13.5px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.cta-sub span i{color:var(--ok);margin-right:6px}
 
-        .footer {
-            margin-top: 50px; text-align: center;
-            font-size: 13px; color: #3a4a62;
-            border-top: 1px solid #1a2333; padding-top: 28px;
-        }
-        .footer a { color: #0066FF; text-decoration: none; }
+/* ===== FEED AO VIVO ===== */
+.feed{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:22px;
+  padding:22px;margin:0 0 50px;overflow:hidden}
+.feed h3{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;
+  margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.feed h3 .dot{width:7px;height:7px}
+.feed-list{height:152px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+#feedTrack{display:flex;flex-direction:column;gap:10px}
+.feed-item{display:flex;align-items:center;gap:13px;padding:9px 12px;background:rgba(0,0,0,.25);border-radius:12px;
+  border-left:2px solid var(--blue)}
+.feed-item .av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.feed-item .tx{flex:1;font-size:13.5px;color:var(--muted)}
+.feed-item .tx b{color:var(--ink)}
+.feed-item .res{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.res.clean{background:rgba(0,255,157,.1);color:var(--ok)}
+.res.threat{background:rgba(255,77,109,.1);color:var(--red)}
+.feed-item .city{font-size:11px;color:var(--dim);display:block;margin-top:1px}
 
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 32px; }
-            .slogan-destaque { font-size: 17px; padding: 14px; }
-            .header { flex-direction: column; align-items: flex-start; }
-            .servicos { padding: 28px 16px; }
-            .servicos-grid { grid-template-columns: 1fr; }
-            .cta .btn-whatsapp { padding: 14px 32px; font-size: 17px; }
-        }
-    </style>
+/* ===== SECTION TITLE ===== */
+.sec-title{text-align:center;font-size:30px;font-weight:800;letter-spacing:-.6px;margin:10px 0 8px}
+.sec-title span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-desc{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 32px;font-size:15.5px}
+
+/* ===== COMO FUNCIONA ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px}
+.step{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px 18px;text-align:center;position:relative}
+.step .num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.step i{font-size:28px;color:var(--cyan);margin:8px 0 12px}
+.step h4{font-size:16px;font-weight:700;margin-bottom:5px}
+.step p{font-size:13px;color:var(--dim);line-height:1.5}
+
+/* ===== CONFIANÇA ===== */
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:56px}
+.tcard{background:linear-gradient(180deg,rgba(0,255,157,.04),rgba(255,255,255,.02));
+  border:1px solid rgba(0,255,157,.12);border-radius:18px;padding:24px 20px}
+.tcard i{font-size:26px;color:var(--ok);margin-bottom:10px}
+.tcard h4{font-size:16px;font-weight:700;margin-bottom:5px}
+.tcard p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+/* ===== DEPOIMENTOS ===== */
+.testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:56px}
+.tq{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px}
+.tq .stars{color:var(--warn);font-size:13px;margin-bottom:12px;letter-spacing:2px}
+.tq p{font-size:14.5px;color:var(--ink);line-height:1.6;margin-bottom:16px;font-style:italic}
+.tq .who{display:flex;align-items:center;gap:12px}
+.tq .who .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.tq .who .meta{font-size:12.5px}
+.tq .who .meta b{display:block;font-size:13.5px}
+.tq .who .meta span{color:var(--dim)}
+
+/* ===== SERVIÇOS ===== */
+.servicos{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:26px;padding:38px 28px;margin-bottom:56px}
+.servicos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.servico{background:rgba(0,0,0,.25);border-radius:16px;padding:22px;border-left:3px solid var(--blue);transition:.25s}
+.servico:hover{border-left-color:var(--cyan);background:rgba(0,102,255,.05);transform:translateY(-3px)}
+.servico h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.servico p{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.preco{display:inline-block;font-size:13px;font-weight:700;color:var(--cyan);background:rgba(0,212,255,.08);padding:5px 14px;border-radius:20px}
+.servico.dest{border-left-color:var(--ok);background:rgba(0,255,157,.04)}
+.servico .badge-pop{font-size:10px;font-weight:800;color:#070b16;background:var(--ok);padding:2px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;float:right}
+
+/* ===== FAQ ===== */
+.faq{margin-bottom:50px;max-width:760px;margin-left:auto;margin-right:auto}
+.q{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.q summary{padding:18px 20px;font-size:15.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.q summary::-webkit-details-marker{display:none}
+.q summary i{color:var(--cyan);transition:.2s;flex-shrink:0}
+.q[open] summary i{transform:rotate(45deg)}
+.q .a{padding:0 20px 18px;font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ===== CTA FINAL ===== */
+.final{text-align:center;background:linear-gradient(135deg,rgba(0,102,255,.12),rgba(0,212,255,.06));
+  border:1px solid rgba(0,212,255,.2);border-radius:26px;padding:48px 28px;margin-bottom:40px}
+.final h2{font-size:32px;font-weight:900;letter-spacing:-.8px;margin-bottom:12px}
+.final p{color:var(--muted);font-size:16px;max-width:480px;margin:0 auto 26px}
+.urgency{display:inline-flex;align-items:center;gap:9px;background:rgba(255,176,32,.1);border:1px solid rgba(255,176,32,.25);
+  color:var(--warn);font-size:13px;font-weight:600;padding:8px 18px;border-radius:40px;margin-bottom:26px}
+
+.footer{text-align:center;font-size:12.5px;color:var(--dim);border-top:1px solid #15203a;padding-top:26px}
+.footer a{color:var(--blue)}
+.footer .disc{font-size:11px;color:#3a4860;max-width:620px;margin:14px auto 0;line-height:1.5}
+
+/* ===== BOTÃO FLUTUANTE ===== */
+.float-wa{position:fixed;bottom:22px;right:22px;z-index:50;background:linear-gradient(135deg,#25D366,#1ebd5a);
+  color:#fff;width:auto;padding:14px 24px;border-radius:60px;font-weight:800;font-size:15px;
+  box-shadow:0 8px 30px rgba(37,211,102,.45);display:flex;align-items:center;gap:10px;animation:bob 2.6s ease-in-out infinite}
+.float-wa i{font-size:21px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+@media (max-width:860px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:22px 16px}
+}
+@media (max-width:560px){
+  .hero h1{font-size:36px}
+  .hero .sub{font-size:16.5px}
+  .sec-title{font-size:25px}
+  .btn-wa{padding:17px 34px;font-size:18px}
+  .float-wa{padding:13px 18px;font-size:14px}
+  .stat .n{font-size:27px}
+}
+</style>
 </head>
 <body>
 
-    <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-            <source src="https://player.vimeo.com/external/459389137.hd.mp4?s=87af39d33010f3408a0d0a2f1b4c4890d984cfb7&profile_id=170&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
-        <div class="video-overlay"></div>
+<div class="bg-fx">
+  <div class="grid-lines"></div>
+  <div class="radar"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"><span>iSecure</span><small>Forensic Intelligence</small></div>
+    <div class="live-pill"><span class="dot"></span><b id="online">214</b>&nbsp;pessoas verificando agora</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="tag"><i class="fas fa-fingerprint"></i> Diagnóstico Forense de Celular</div>
+    <h1>
+      Alguém pode estar<br>
+      <span class="red">lendo tudo</span> <span class="hl">no seu celular.</span>
+    </h1>
+    <p class="sub">
+      Spyware, rastreadores e apps espiões deixam <b>rastros invisíveis</b>.
+      Nós encontramos — e te entregamos a prova em um laudo. <b>Sigilo absoluto.</b>
+    </p>
+
+    <div class="symp">
+      <span><i class="fas fa-circle"></i> A pessoa sabe de coisas que você não contou</span>
+      <span><i class="fas fa-circle"></i> Bateria some e o aparelho esquenta parado</span>
+      <span><i class="fas fa-circle"></i> Barulhos estranhos nas ligações</span>
+      <span><i class="fas fa-circle"></i> Apps que você não instalou</span>
+      <span><i class="fas fa-circle"></i> Internet sumindo sem explicação</span>
     </div>
 
-    <div class="container">
-
-        <header class="header">
-            <div class="logo">
-                <span>iSecure</span>
-                <small>Forensic Intelligence</small>
-            </div>
-            <div class="badge-top">
-                <i class="fas fa-shield-alt"></i> 100% Criptografado
-            </div>
-        </header>
-
-        <section class="hero">
-            <div class="hero-content">
-                <div class="tag"><i class="fas fa-robot"></i> Powered by AI Forensics</div>
-                <h1>
-                    Segurança digital<br />
-                    <span class="highlight">não é um evento.</span>
-                </h1>
-                <div class="sub">
-                    É um processo contínuo. Novas ameaças surgem todos os dias.<br />
-                    O que está seguro hoje pode não estar amanhã.
-                </div>
-                <div class="slogan-destaque">
-                    <i class="fas fa-shield-halved"></i>
-                    "Você fecha a porta, mas o ladrão descobre uma janela nova todo dia."
-                </div>
-            </div>
-        </section>
-
-        <div class="benefits">
-            <div class="benefit-card">
-                <i class="fas fa-user-shield"></i>
-                <h4>🔒 Dados protegidos</h4>
-                <p>Após o diagnóstico, todos os dados são apagados. Garantia de privacidade total.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-brain"></i>
-                <h4>🧠 Inteligência forense</h4>
-                <p>Detectamos espiões, rastreadores e caches ocultos.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-file-pdf"></i>
-                <h4>📄 Laudo executivo</h4>
-                <p>Relatório detalhado com passo a passo para resolver cada problema.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-mobile-alt"></i>
-                <h4>📱 Multiplataforma</h4>
-                <p>iPhone, Android, Windows e macOS. Um diagnóstico para todos.</p>
-            </div>
-        </div>
-
-        <div class="servicos">
-            <h2>🛡️ O que <span>oferecemos</span></h2>
-            <div class="servicos-grid">
-                <div class="servico-item">
-                    <h4>🔍 Diagnóstico Completo</h4>
-                    <p>Varredura forense para spyware, lixo digital e assinaturas ocultas.</p>
-                    <span class="preco">A partir de R$ 97</span>
-                </div>
-                <div class="servico-item">
-                    <h4>🛠️ Correção e Hardening</h4>
-                    <p>Implementação de medidas de segurança para eliminar vulnerabilidades.</p>
-                    <span class="preco">Consultar</span>
-                </div>
-                <div class="servico-item">
-                    <h4>📡 Monitoria Contínua</h4>
-                    <p>Alertas em tempo real, varreduras periódicas e relatórios mensais.</p>
-                    <span class="preco">A partir de R$ 1.500/mês</span>
-                </div>
-                <div class="servico-item">
-                    <h4>📊 Relatório Executivo</h4>
-                    <p>Evidências, classificação de risco e plano de ação priorizado.</p>
-                    <span class="preco">Sob consulta</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta">
-            <a href="https://wa.me/5569999999999?text=Olá! Quero proteger minha empresa com a iSecure." class="btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> Falar com um especialista
-            </a>
-            <p><i class="fas fa-lock"></i> 100% seguro · Resposta em até 2 horas</p>
-        </div>
-
-        <footer class="footer">
-            &copy; 2026 <strong>iSecure Diagnostics</strong> — Forensic Intelligence.<br />
-            <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a>
-        </footer>
-
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="18742">0</div><div class="l">Aparelhos analisados</div></div>
+      <div class="stat"><div class="n" data-count="6318">0</div><div class="l">Ameaças encontradas</div></div>
+      <div class="stat"><div class="n" data-count="12424">0</div><div class="l">Celulares limpos</div></div>
+      <div class="stat live"><div class="n" id="today">0</div><div class="l">Análises hoje</div></div>
     </div>
 
+    <!-- CTA -->
+    <div class="cta-main">
+      <a class="btn-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
+        <i class="fab fa-whatsapp"></i> Verificar meu celular agora
+      </a>
+      <div class="cta-sub">
+        <span><i class="fas fa-lock"></i> 100% sigiloso</span>
+        <span><i class="fas fa-bolt"></i> Resposta em minutos</span>
+        <span><i class="fas fa-user-secret"></i> Indetectável</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED AO VIVO -->
+  <div class="feed">
+    <h3><span class="dot"></span> Verificações acontecendo agora · Brasil</h3>
+    <div class="feed-list"><div id="feedTrack"></div></div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <h2 class="sec-title">Simples, rápido e <span>sem entregar seu aparelho</span></h2>
+  <p class="sec-desc">Você não precisa deixar o celular com ninguém. Todo o processo é remoto e seguro.</p>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><i class="fas fa-comment-dots"></i><h4>Você fala com a gente</h4><p>Manda um "oi" no WhatsApp. Te explicamos tudo, sem compromisso.</p></div>
+    <div class="step"><span class="num">2</span><i class="fas fa-cloud-arrow-up"></i><h4>Gera o backup</h4><p>Você gera um backup do aparelho seguindo um passo a passo simples.</p></div>
+    <div class="step"><span class="num">3</span><i class="fas fa-magnifying-glass-chart"></i><h4>Análise forense</h4><p>Nossa engine vasculha spyware, rastreadores e apps ocultos.</p></div>
+    <div class="step"><span class="num">4</span><i class="fas fa-file-shield"></i><h4>Recebe o laudo</h4><p>Relatório em PDF com o que achamos e como remover cada ameaça.</p></div>
+  </div>
+
+  <!-- CONFIANÇA -->
+  <h2 class="sec-title">Seus dados, <span>protegidos de verdade</span></h2>
+  <p class="sec-desc">A gente entende: você vai confiar o conteúdo do seu celular a alguém. Por isso a privacidade é o centro de tudo.</p>
+  <div class="trust">
+    <div class="tcard"><i class="fas fa-trash-can"></i><h4>Apagamos tudo depois</h4><p>Concluído o laudo, seus dados são destruídos. Não guardamos nada.</p></div>
+    <div class="tcard"><i class="fas fa-user-shield"></i><h4>Sigilo total</h4><p>Ninguém saberá que você fez a verificação. Discrição absoluta.</p></div>
+    <div class="tcard"><i class="fas fa-scale-balanced"></i><h4>Dentro da LGPD</h4><p>Tratamento de dados conforme a lei. Você no controle, sempre.</p></div>
+    <div class="tcard"><i class="fas fa-mobile-screen"></i><h4>Você fica com o aparelho</h4><p>Processo 100% remoto. Seu celular nunca sai da sua mão.</p></div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <h2 class="sec-title">Quem verificou, <span>dormiu tranquilo</span></h2>
+  <div class="testi">
+    <div class="tq"><div class="stars">★★★★★</div><p>"Eu tinha certeza que estava sendo monitorada. O laudo mostrou um app oculto que eu nem sabia que existia. Removi e minha paz voltou."</p><div class="who"><div class="av">M</div><div class="meta"><b>Mariana R.</b><span>São Paulo · SP</span></div></div></div>
+    <div class="tq"><div class="stars">★★★★★</div><p>"Comprei um celular usado e estava com receio. Fizeram a varredura completa e me explicaram tudo. Profissionalismo de verdade."</p><div class="who"><div class="av">C</div><div class="meta"><b>Carlos M.</b><span>Salvador · BA</span></div></div></div>
+    <div class="tq"><div class="stars">★★★★★</div><p>"Atendimento sigiloso e rápido. Em poucas horas recebi o relatório. Felizmente meu aparelho estava limpo — e agora tenho a prova disso."</p><div class="who"><div class="av">J</div><div class="meta"><b>Juliana F.</b><span>Manaus · AM</span></div></div></div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <div class="servicos">
+    <h2 class="sec-title" style="margin-top:0">O que <span>oferecemos</span></h2>
+    <div class="servicos-grid">
+      <div class="servico dest"><span class="badge-pop">Mais pedido</span><h4>🔍 Diagnóstico Completo</h4><p>Varredura forense de spyware, rastreadores, apps ocultos e assinaturas suspeitas.</p><span class="preco">A partir de R$ 97</span></div>
+      <div class="servico"><h4>🛠️ Limpeza & Hardening</h4><p>Removemos as ameaças e blindamos o aparelho contra novas invasões.</p><span class="preco">Sob consulta</span></div>
+      <div class="servico"><h4>📡 Monitoria Contínua</h4><p>Varreduras periódicas, alertas em tempo real e relatórios mensais.</p><span class="preco">Planos mensais</span></div>
+      <div class="servico"><h4>📊 Laudo Executivo</h4><p>Evidências, classificação de risco e plano de ação priorizado.</p><span class="preco">Sob consulta</span></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="sec-title">Perguntas <span>frequentes</span></h2>
+  <p class="sec-desc">As dúvidas que todo mundo tem antes de verificar.</p>
+  <div class="faq">
+    <details class="q"><summary>A pessoa que me monitora vai descobrir que eu verifiquei? <i class="fas fa-plus"></i></summary><div class="a">Não. Todo o processo é feito de forma discreta, a partir de um backup do seu aparelho. Não enviamos nada, não alertamos ninguém. É 100% sigiloso.</div></details>
+    <details class="q"><summary>Funciona em iPhone e Android? <i class="fas fa-plus"></i></summary><div class="a">Sim. Atendemos iPhone (iOS), Android, e também Windows e macOS. Um diagnóstico para o seu aparelho, seja qual for.</div></details>
+    <details class="q"><summary>Preciso entregar meu celular? <i class="fas fa-plus"></i></summary><div class="a">Não. O processo é totalmente remoto. Você gera um backup seguindo nossas instruções e o seu aparelho nunca sai da sua mão.</div></details>
+    <details class="q"><summary>E se não encontrarem nada? <i class="fas fa-plus"></i></summary><div class="a">Melhor ainda — você recebe o laudo confirmando que o aparelho está limpo. Ter a prova de que está tudo certo também vale ouro pela sua tranquilidade.</div></details>
+    <details class="q"><summary>É legal fazer isso? <i class="fas fa-plus"></i></summary><div class="a">Sim. Você está analisando o seu próprio aparelho, que é seu direito. Atuamos dentro da lei e da LGPD para proteger a sua privacidade.</div></details>
+    <details class="q"><summary>Quanto tempo demora? <i class="fas fa-plus"></i></summary><div class="a">O atendimento começa em minutos no WhatsApp. A análise forense costuma ser entregue no mesmo dia, dependendo do tamanho do backup.</div></details>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="final">
+    <div class="urgency"><i class="fas fa-triangle-exclamation"></i> Cada dia parado é mais conversa e localização entregues a quem te monitora</div>
+    <h2>A dúvida é pior que a verdade.</h2>
+    <p>Descubra hoje o que está acontecendo dentro do seu celular. Sem rastros, sem julgamento.</p>
+    <a class="btn-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
+      <i class="fab fa-whatsapp"></i> Quero verificar agora
+    </a>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 <strong>iSecure Diagnostics</strong> — Forensic Intelligence.<br>
+    <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a>
+    <p class="disc">As estatísticas e relatos exibidos são ilustrativos e representam a atuação da iSecure. Resultados variam conforme cada aparelho. A iSecure atua na análise de dispositivos do próprio solicitante, em conformidade com a LGPD.</p>
+  </footer>
+</div>
+
+<!-- BOTÃO FLUTUANTE -->
+<a class="float-wa" href="" data-wa data-msg="Olá! Quero fazer o diagnóstico forense do meu celular com a iSecure." target="_blank">
+  <i class="fab fa-whatsapp"></i> Falar agora
+</a>
+
+<script>
+// ===== WHATSAPP =====
+var WA = "5569999438321"; // 69 99943-8321
+document.querySelectorAll('[data-wa]').forEach(function(a){
+  a.href = "https://wa.me/"+WA+"?text="+encodeURIComponent(a.getAttribute('data-msg'));
+});
+
+// ===== CONTADORES ANIMADOS =====
+function animateCount(el){
+  var target = +el.getAttribute('data-count'), cur = 0, step = target/60;
+  var t = setInterval(function(){
+    cur += step;
+    if(cur >= target){ cur = target; clearInterval(t); }
+    el.textContent = Math.floor(cur).toLocaleString('pt-BR');
+  }, 22);
+}
+var counted = false;
+function tryCount(){
+  if(counted) return; counted = true;
+  document.querySelectorAll('[data-count]').forEach(animateCount);
+}
+window.addEventListener('load', tryCount);
+setTimeout(tryCount, 600);
+
+// análises "hoje" sobe devagar
+var today = 137;
+var tEl = document.getElementById('today');
+function bumpToday(){ tEl.textContent = today.toLocaleString('pt-BR'); }
+bumpToday();
+setInterval(function(){ today += Math.floor(Math.random()*2)+1; bumpToday(); }, 5200);
+
+// online flutua
+var onEl = document.getElementById('online');
+setInterval(function(){
+  var base = 214 + Math.floor(Math.random()*40) - 18;
+  onEl.textContent = base;
+}, 3800);
+
+// ===== FEED AO VIVO (Brasil todo) =====
+var nomes = ["Ana","Lucas","Beatriz","Rafael","Camila","Bruno","Fernanda","Diego","Patrícia","Thiago","Larissa","Gustavo","Vanessa","Marcelo","Aline","Rodrigo","Juliana","Felipe","Carla","André","Letícia","Vinícius","Sabrina","Eduardo","Priscila","Gabriel","Renata","Matheus","Tatiane","Leonardo"];
+var sobren = ["S.","M.","R.","L.","F.","A.","C.","P.","B.","G.","T.","O.","N.","V."];
+var cidades = ["São Paulo · SP","Rio de Janeiro · RJ","Belo Horizonte · MG","Salvador · BA","Fortaleza · CE","Curitiba · PR","Manaus · AM","Recife · PE","Porto Alegre · RS","Brasília · DF","Goiânia · GO","Belém · PA","Campinas · SP","Guarulhos · SP","Maceió · AL","Natal · RN","João Pessoa · PB","Teresina · PI","Campo Grande · MS","Cuiabá · MT","Porto Velho · RO","Florianópolis · SC","Vitória · ES","São Luís · MA","Aracaju · SE","Uberlândia · MG","Ribeirão Preto · SP","Sorocaba · SP","Niterói · RJ","Caxias do Sul · RS"];
+var apar = ["iPhone 13","iPhone 15","Galaxy S23","iPhone 12","Galaxy A54","Redmi Note 12","iPhone 14","Motorola Edge","Galaxy S22","iPhone 11","Poco X5","Galaxy A34"];
+
+function rand(a){ return a[Math.floor(Math.random()*a.length)]; }
+function mkItem(){
+  var nome = rand(nomes)+" "+rand(sobren);
+  var threat = Math.random() < 0.34;
+  var res = threat
+    ? '<span class="res threat"><i class="fas fa-triangle-exclamation"></i> '+(Math.floor(Math.random()*3)+1)+' ameaça(s)</span>'
+    : '<span class="res clean"><i class="fas fa-check"></i> Limpo</span>';
+  var d = document.createElement('div');
+  d.className = 'feed-item';
+  d.innerHTML = '<div class="av">'+nome[0]+'</div>'+
+    '<div class="tx"><b>'+nome+'</b> verificou um <b>'+rand(apar)+'</b>'+
+    '<span class="city"><i class="fas fa-location-dot"></i> '+rand(cidades)+'</span></div>'+res;
+  return d;
+}
+var track = document.getElementById('feedTrack');
+for(var i=0;i<5;i++) track.appendChild(mkItem());
+setInterval(function(){
+  track.insertBefore(mkItem(), track.firstChild);
+  if(track.children.length > 6) track.removeChild(track.lastChild);
+}, 2600);
+</script>
 </body>
 </html>
